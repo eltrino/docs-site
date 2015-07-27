@@ -68,6 +68,6 @@ def update_remote_ghpages
   sh "git init"
   sh "git add ."
   sh "git commit -m 'Update documentation'"
-  sh "git remote add origin " + config['repository']
+  sh "git remote add origin " + @config['repository']
   sh "git push origin master:gh-pages --force"
 end
