@@ -38,17 +38,6 @@ task :buildfinal do
   sh "jekyll build"
 end
 
-desc 'Push final site to gh-pages...'
-task :deployghpages => :buildfinal do
-  Dir.chdir('_site'){
-    sh "git init"
-    sh "git add ."
-    sh "git commit -m 'Update documentation'"
-    sh "git remote add origin " + config['repository']
-    sh "git push origin master:gh-pages --force"
-  }
-end
-
 desc "Travis CI task..."
 task :travis do
   Dir.chdir('_site'){
@@ -70,8 +59,4 @@ desc 'Run server'
 task :run do
   print "> Starting jekyll...\n"
   sh 'jekyll serve --watch'
-end
-
-def update_remote_ghpages
-
 end
