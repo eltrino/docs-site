@@ -41,13 +41,15 @@ end
 desc 'Push final site to gh-pages...'
 task :deployghpages => :buildfinal do
   Dir.chdir('_site'){
-      update_remote_ghpages
+    make_ghpages
+    update_remote_ghpages
   }
 end
 
 desc "Travis CI task..."
 task :travis do
   Dir.chdir('_site'){
+    make_ghpages
     sh "git config user.name 'Mr. Barabashka'"
     sh "git config user.email 'barabashka@eltrino.com'"
     sh 'git config credential.helper "store --file=.git/credentials"'
@@ -65,9 +67,12 @@ task :run do
 end
 
 def update_remote_ghpages
+  sh "git remote add origin " + @config['repository']
+  sh "git push origin master:gh-pages --force"
+end
+
+def make_ghpages
   sh "git init"
   sh "git add ."
   sh "git commit -m 'Update documentation'"
-  sh "git remote add origin " + @config['repository']
-  sh "git push origin master:gh-pages --force"
 end
