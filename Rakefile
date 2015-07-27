@@ -44,7 +44,8 @@ task :deployghpages => :buildfinal do
     sh "git init"
     sh "git add ."
     sh "git commit -m 'Update documentation'"
-    update_remote_ghpages
+    sh "git remote add origin " + config['repository']
+    sh "git push origin master:gh-pages --force"
   }
 end
 
@@ -60,7 +61,8 @@ task :travis do
     File.open('.git/credentials', 'w') do |f|
       f.write("https://#{ENV['GH_TOKEN']}:@github.com")
     end
-    update_remote_ghpages
+    sh "git remote add origin " + config['repository']
+    sh "git push origin master:gh-pages --force"
   }
 end
 
@@ -71,6 +73,5 @@ task :run do
 end
 
 def update_remote_ghpages
-  sh "git remote add origin " + @config['repository']
-  sh "git push origin master:gh-pages --force"
+
 end
