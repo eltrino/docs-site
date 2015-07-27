@@ -1,0 +1,40 @@
+<header class="site-header">
+
+  <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+          <div class="navbar-header">
+            <span class="navbar-brand">DiamanteDesk Documentation</span>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.url | language_url | english_name }}<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  {% for lang in site.languages %}
+                    <li><a href="/{{ lang }}/{{ page.url | version_url }}/{{ page.url | doc_url }}">{{ lang | english_name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.url | version_url }} version<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  {% for ver in site.versions %}
+                    <li><a href="/{{ page.url | language_url }}/{{ ver }}/{{ page.url | doc_url }}">{{ ver }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <div id="search">
+                <form action="/{{ page.url | language_url }}/{{ page.url | version_url }}/search.html" method="get" class="navbar-form navbar-right">
+                  <div class="form-group">
+                    <input type="text" id="search-query" name="q" placeholder="Search" class="form-control" autocomplete="off" />
+                  </div>
+                </form>
+              </div>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+
+</header>

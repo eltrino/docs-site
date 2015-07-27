@@ -1,0 +1,20 @@
+# Site settings
+title: DiamanteDesk Documentation
+url: "http://docs.diamantedesk.com"
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+markdown: redcarpet
+redcarpet:
+  extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+highlighter: pygments
+exclude: [Gemfile, Gemfile.lock, Rakefile, README.md, bower.json]
+
+documentation:
+  repository: http://github.com/eltrino/diamantedesk-documentation
+  alias:
+    master: latest

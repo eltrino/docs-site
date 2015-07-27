@@ -1,0 +1,9 @@
+img {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+}
+.affix {
+    position: fixed;
+    top: 0;
+}
