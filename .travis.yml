@@ -2,8 +2,7 @@ ilanguage: ruby
 rvm:
 - 2.2
 script:
-- bundle exec rake buildfinal
-- bundle exec rake travis
+- bundle exec rake buildfinal travis
 branches:
   only:
   - master
