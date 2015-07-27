@@ -1,0 +1,15 @@
+ilanguage: ruby
+rvm:
+- 2.2
+script:
+- bundle exec rake buildfinal
+- bundle exec rake travis
+branches:
+  only:
+  - master
+before_script:
+- npm install -g bower
+- bower install
+env:
+  global:
+    secure: FU7xfsjSn0skrMQVe2t5W+3WZMOSfAmU3lWVBng3a0zvP5Dc0CAJd0lVdLCw5qdZIpaU7tB20COEg7QLrq9/ALOhAhlSNeg2NpwjZIWf3Zvzz2Q5GR5XS7cmYTEQg0TgWKpfK5ptj3s1ahg12TIgV0xC+5DSUBTr5TyOLR9DxpLfY3t/HpJKWmcHUnVa7z2tAF78TrFETzPbFNGXPPkGjnrnKyf1k9/IBC5t3PLZOSZdy6HsrXD3Ybc17SdSAFBj5co1CBoMqiqsKzDaiPbjhxW1poCbwVcTjH8RSl9o6zywnQelNE7EBfweTHpwKTz/xEI6dzmCwEvx3+ff00agJNyvv9MyW6dQ72OlcWTooLETKhfw2XJTnBQWnSD9oz3DV6OTptKNHo7BeuBtfI4MZuPwAuDpqsWKASgC0VrOaE1cgC+i+YsUTW6DPrcDKfrMinyzV/3ywig2Mo361tDFftWdgjLAxY31YNjEJNcjJtgao5W7BFFkc1AcG48NY/GNSV7hygwXEjVEig0xmgSRlxgaJaGv15/bnSCfewCrIo8W5AQm0cUB7jth2lV2jllzHvCOC5NJz7jb7spx0nJ61/6KvWNcqnT/sfMh7LFvWQFtQLwuS0VqeB4rZzUkivq00LjVlDp087TV0rU58ydlcMas1DKjxTDiOlxkDeq7bNc=

@@ -18,3 +18,4 @@ documentation:
   repository: http://github.com/eltrino/diamantedesk-documentation
   alias:
     master: latest
+  ignore: ["gh-pages"]

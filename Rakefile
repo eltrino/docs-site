@@ -21,6 +21,8 @@ task :buildfinal do
     branches = `git branch -r | grep -v HEAD`.split
     branches.each do |branch_full|
       remote, branch = branch_full.split("/")
+      next if config['ignore'].include? branch
+
       if branch.include? "-"
         name, language = branch.split("-")
       else
@@ -38,21 +40,21 @@ end
 
 desc 'Push final site to gh-pages...'
 task :deployghpages => :buildfinal do
-  Dir.chdir('.repository'){
-      make_remote_ghpages
+  Dir.chdir('_site'){
+      update_remote_ghpages
   }
 end
 
 desc "Travis CI task..."
 task :travis do
-  Dir.chdir('.repository'){
+  Dir.chdir('_site'){
     sh "git config user.name 'Mr. Barabashka'"
     sh "git config user.email 'barabashka@eltrino.com'"
     sh 'git config credential.helper "store --file=.git/credentials"'
     File.open('.git/credentials', 'w') do |f|
       f.write("https://#{ENV['GH_TOKEN']}:@github.com")
     end
-    make_remote_ghpages
+    update_remote_ghpages
   }
 end
 
@@ -62,13 +64,10 @@ task :run do
   sh 'jekyll serve --watch'
 end
 
-def make_remote_ghpages
-  sh "pwd"
-  exit
-  sh "git checkout --orphan gh-pages"
-  sh "git rm -rf ."
-  sh "cp -R ../_site/* ."
+def update_remote_ghpages
+  sh "git init"
   sh "git add ."
-  sh "git commit -m 'Updated documentation build'"
-  sh "git push origin gh-pages --force"
+  sh "git commit -m 'Update documentation'"
+  sh "git remote add origin " + config['repository']
+  sh "git push origin master:gh-pages --force"
 end
