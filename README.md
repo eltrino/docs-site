@@ -102,6 +102,5 @@ ignore | The list of branches that shall be ignored.
 
 ## Todo
 
-- update 404 page
 - generate index files
 - generate root index file to custom version

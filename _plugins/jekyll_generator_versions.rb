@@ -5,6 +5,8 @@ module Jekyll
       versions = []
       languages = []
       for page in site.pages
+        next if page['exclude_from_search']
+
         language, version = page['path'].scan(/(\w{2})\/([\w0-9\.]+)\/.*/)[0]
         versions << version unless versions.include?(version)
         languages << language unless languages.include?(language)

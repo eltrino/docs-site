@@ -1,1 +1,34 @@
-404 Page
+---
+layout: nondoc
+exclude_from_search: true
+---
+<style type="text/css">
+    .error-template {padding: 40px 15px;text-align: center;}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>whoops.</h1>
+            <p class="lead">
+                The page you were looking for doesn't exist
+            </p>
+            <form action="/en/latest/search.html" method="get" id="search-form">
+              <div class="form-group">
+                <input type="text" id="search-query" name="q" placeholder="Try to find what you were looking for" class="form-control" autocomplete="off" />
+              </div>
+            </form>
+
+            <p>Still no luck? Probably its better to report an <a href="{{ site.documentation.repository }}/issues/new">issue</a>.</p>
+
+            <script type="text/javascript">
+                var match = window.location.href.match(/.*?\/([a-z]{2})\/(.*?)\/.*/);
+                if (match) {
+                    $('#search-form').attr("action", '/' + match[1] + '/' + match[2] + '/search.html');
+                }
+            </script>
+        </div>
+    </div>
+</div>
+
+
+          
