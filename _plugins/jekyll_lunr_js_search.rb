@@ -1,4 +1,5 @@
 require 'json'
+require 'fileutils'
 
 module Jekyll
   module LunrJsSearch
@@ -57,7 +58,7 @@ module Jekyll
         indexes.each do |path, index|
           json = JSON.generate({:entries => index})
           dest = File.join(site.dest, path)
-          Dir::mkdir(dest) unless File.directory?(dest)
+          FileUtils.mkpath dest unless File.directory?(dest)
 
           # Search index
           filename = 'search.json'
