@@ -11,7 +11,6 @@ task :default => :run
 
 desc 'Build final site...'
 task :buildfinal do
-
   if Dir.exist?('.repository')
     print "Unclean build. Remove .repository and other folders to proceed!\n"
     exit
@@ -40,10 +39,6 @@ end
 
 desc "Travis CI task..."
 task :travis do
-  file = YAML::load(File.open('_config.yml'))
-  file['mode'] = 'production'
-  File.open("_config.yml", 'w') { |f| YAML.dump(file, f) }
-
   Dir.chdir('_site'){
     sh "git init"
     sh "git config user.name 'Mr. Barabashka'"
@@ -57,6 +52,13 @@ task :travis do
     sh "git remote add origin " + config['repository']
     sh "git push origin master:gh-pages --force"
   }
+end
+
+desc "Turn on production mode ..."
+task :production do
+  file = YAML::load(File.open('_config.yml'))
+  file['mode'] = 'production'
+  File.open("_config.yml", 'w') { |f| YAML.dump(file, f) }
 end
 
 desc 'Run server'
