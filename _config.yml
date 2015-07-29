@@ -11,7 +11,7 @@ defaults:
 markdown: redcarpet
 redcarpet:
   extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
-highlighter: pygments
+highlighter: rouge
 exclude: [Gemfile, Gemfile.lock, Rakefile, README.md, bower.json]
 lunr_search:
   strip_index_html: true
