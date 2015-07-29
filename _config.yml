@@ -20,3 +20,12 @@ documentation:
   alias:
     master: latest
   ignore: ["gh-pages"]
+analytics:
+  universal:
+    id: UA-53130831-2
+    site: docs.diamantedesk.com
+mode: development
+sitemap:
+    file: "/sitemap.xml"
+    change_frequency_name: "daily"
+    priority_name: "0.5"

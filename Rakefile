@@ -40,6 +40,10 @@ end
 
 desc "Travis CI task..."
 task :travis do
+  file = YAML::load(File.open('_config.yml'))
+  file['mode'] = 'production'
+  File.open("_config.yml", 'w') { |f| YAML.dump(file, f) }
+
   Dir.chdir('_site'){
     sh "git init"
     sh "git config user.name 'Mr. Barabashka'"
