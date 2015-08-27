@@ -3,7 +3,25 @@ img {
     height: auto;
     max-width: 100%;
 }
+
+#navbar {
+    padding-left:0;
+    padding-right:0;
+}
+
 .affix {
-    position: fixed;
     top: 0;
+}
+
+@media (max-width: 767px) {
+    .form-control {
+        font-size: 16px;
+    }
+    .affix {
+        position: static;
+    }
+    .navbar-brand {
+        padding-right: 0;
+        font-size: 16px;
+    }
 }

@@ -1,0 +1,34 @@
+<div class="col-xs-12 col-sm-4 col-md-3">
+    <nav id="navbar" class="hidden-print navbar-collapse collapse">
+        <div class="visible-xs-block">
+            <ul class="nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.url | language_url | english_name }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for lang in site.languages %}
+                        <li><a href="/{{ lang }}/{{ page.url | version_url }}/{{ page.url | doc_url }}">{{ lang | english_name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ page.url | version_url }} version<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        {% for ver in site.versions %}
+                        <li><a href="/{{ page.url | language_url }}/{{ ver }}/{{ page.url | doc_url }}">{{ ver }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav">
+                <form action="/{{ page.url | language_url }}/{{ page.url | version_url }}/search.html" method="get" class="navbar-form">
+                    <div class="form-group">
+                        <input type="text" name="q" placeholder="Search" class="form-control search-query" autocomplete="off" />
+                    </div>
+                </form>
+            </ul>
+        </div>
+        <ul data-spy="affix" data-offset-top="60" class="nav bs-docs-sidenav">
+            {% navigation %}
+        </ul>
+    </nav>
+</div>

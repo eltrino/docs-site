@@ -106,8 +106,9 @@
       var oldValue = this.$elem.val();
 
       this.$elem.bind('keyup', debounce(function() {
-        var newValue = self.$elem.val();
+        var newValue = this.value;
         if (newValue !== oldValue) {
+          self.$elem.val(newValue);
           self.search(newValue);
         }
 

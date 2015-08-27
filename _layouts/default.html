@@ -4,14 +4,8 @@
   <body>
   {% include header.html %}
     <div class="container-fluid">
-      <div class="row ">
-        <div class="col-xs-6 col-sm-4 col-md-3">
-          <nav class="hidden-print">
-            <ul data-spy="affix" data-offset-top="60" class="nav bs-docs-sidenav">
-              {% navigation %}
-            </ul>
-          </nav>
-        </div>
+      <div class="row">
+        {% include navigation.html %}
         <div class="col-xs-12 col-sm-8 col-md-9">
           {{ content }}
         </div>
