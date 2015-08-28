@@ -4,6 +4,39 @@ img {
     max-width: 100%;
 }
 
+.navbar-default{
+    background: #50828e;
+    color: #f2f5e5
+}
+.navbar-default .navbar-brand {
+    color: #f2f5e5
+}
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+    color: #d7e3a2;
+}
+.navbar-default .navbar-toggle {
+    border-color: #d7e3a2;
+}
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background: #91bec6;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #d7e3a2;
+}
+.navbar-default .nav>li>a {
+    color: #d7e3a2;
+}
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    background: #91bec6;
+    color: #d7e3a2;
+}
+
 #navbar {
     padding-left:0;
     padding-right:0;

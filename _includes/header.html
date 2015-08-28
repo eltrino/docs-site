@@ -1,7 +1,7 @@
 <header class="site-header">
 
   <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
+    <div class="container-fluid">
       <div class="navbar-header">
         <span class="navbar-brand">DiamanteDesk Documentation</span>
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -30,7 +30,7 @@
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <form action="/{{ page.url | language_url }}/{{ page.url | version_url }}/search.html" method="get" class="navbar-form navbar-right">
+          <form action="/{{ page.url | language_url }}/{{ page.url | version_url }}/search.html" method="get" class="navbar-form">
             <div class="form-group">
               <input type="text" name="q" placeholder="Search" class="form-control search-query" autocomplete="off" />
             </div>
