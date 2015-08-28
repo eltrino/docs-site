@@ -124,7 +124,10 @@
         this.$entries.empty();
       } else {
         var results = $.map(this.index.search(query), function(result) {
-          return $.grep(entries, function(entry) { return entry.id === parseInt(result.ref, 10); })[0];
+          return $.grep(entries, function(entry) {
+            entry.query = query;
+            return entry.id === parseInt(result.ref, 10);
+          })[0];
         });
 
         this.displayResults(results);

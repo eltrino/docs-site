@@ -2,7 +2,8 @@
   "name": "jekyll-doc",
   "version": "0.1.0",
   "authors": [
-    "Dmytro Vasylenko <dmytro.vasylenko@eltrino.com>"
+    "Dmytro Vasylenko <dmytro.vasylenko@eltrino.com>",
+    "Eugene Tereschenko <et@eltrino.com>"
   ],
   "license": "MIT",
   "ignore": [
@@ -13,6 +14,7 @@
     "lunr.js": "~0.5.11",
     "mustache.js": "~2.1.2",
     "date-steroids": "~1.0.0",
-    "URIjs": "~1.15.2"
+    "URIjs": "~1.15.2",
+    "jquery-highlight": "~3.3.0"
   }
 }
