@@ -5,4 +5,4 @@ gem "jekyll", '~> 2.0'
 gem "iso-639"
 gem "nokogiri"
 gem "rake"
-gem "rouge"
+gem "rouge", '~> 1.3.0'
