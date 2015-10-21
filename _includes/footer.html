@@ -12,4 +12,8 @@
     if(location.hash && location.hash.indexOf('highlight=') > -1){
         $('.post-content').highlight(location.hash.split('=')[1]);
     }
+
+    $('img').click(function(event) {
+        $(this).toggleClass('zoom-image');
+    });
 </script>

@@ -3,10 +3,16 @@ img {
     height: auto;
     max-width: 50%;
     margin: auto;
+    cursor: zoom-in;
 }
 
 img[src$="logo.png"] {
     max-width: 100%;
+}
+
+.zoom-image {
+    cursor: zoom-out;
+    max-width: 100%;   
 }
 
 .navbar-default{
