@@ -13,7 +13,7 @@
         $('.post-content').highlight(location.hash.split('=')[1]);
     }
 
-    $('img').click(function(event) {
+    $('img:not(img[src$="logo.png"])').click(function(event) {
         $(this).toggleClass('zoom-image');
     });
 </script>
