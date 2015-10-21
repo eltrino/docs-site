@@ -1,7 +1,8 @@
 img {
-    display: inline-block;
+    display: block;
     height: auto;
     max-width: 50%;
+    margin: auto;
 }
 
 img[src$="logo.png"] {
