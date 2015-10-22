@@ -2,17 +2,27 @@ img {
     display: block;
     height: auto;
     max-width: 50%;
-    margin: auto;
+    margin: 15px auto;
     cursor: zoom-in;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -ms-transition: all .5s;
 }
 
 img[src$="logo.png"] {
     max-width: 100%;
+    cursor: auto;
+    margin: 0;
 }
 
-.zoom-image {
+.zoom-image-lg {
     cursor: zoom-out;
-    max-width: 100%;   
+    transform: scale(2);
+}
+.zoom-image-sm {
+    cursor: zoom-out;
+    transform: scale(3);
 }
 
 .navbar-default{
@@ -55,6 +65,7 @@ img[src$="logo.png"] {
 
 .affix {
     top: 0;
+    width: 23%;
 }
 
 
