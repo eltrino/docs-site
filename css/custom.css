@@ -1,7 +1,7 @@
 img {
     display: block;
+    width: 50%;
     height: auto;
-    max-width: 50%;
     margin: 15px auto;
     cursor: zoom-in;
     transition: all .5s;
@@ -15,14 +15,9 @@ img[src$="logo.png"] {
     cursor: auto;
     margin: 0;
 }
-
-.zoom-image-lg {
+.zoom-image {
     cursor: zoom-out;
-    transform: scale(2);
-}
-.zoom-image-sm {
-    cursor: zoom-out;
-    transform: scale(3);
+    width: 100%;
 }
 
 .navbar-default{

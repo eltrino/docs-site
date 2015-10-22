@@ -15,64 +15,9 @@
 
     var screenshot = $('img:not(img[src$="logo.png"])');
 
-    var offsetWidth;
-
-    $(window).resize(function() {
-
-        offsetWidth = document.documentElement.clientWidth;
-
-        console.log(offsetWidth);
-
-        if (offsetWidth > 768 && offsetWidth < 1000) {
-
-            screenshot.each(function() {
-
-                if ($(this).hasClass('zoom-image-lg')) {
-
-                    $(this).removeClass('zoom-image-lg').addClass('zoom-image-sm');
-                }
-            });
-        } else {
-
-            screenshot.each(function() {
-
-                if ($(this).hasClass('zoom-image-sm')) {
-
-                    $(this).removeClass('zoom-image-sm').addClass('zoom-image-lg');
-                }
-            });
-        }
-    });
-
     screenshot.click(function() {
 
-        offsetWidth = document.documentElement.clientWidth;
-
-        if (offsetWidth > 767 && offsetWidth < 1000) {
-
-            if (!($(this).hasClass('zoom-image-lg') || $(this).hasClass('zoom-image-sm'))) {
-
-                screenshot.removeClass('zoom-image-lg').removeClass('zoom-image-sm');
-
-                $(this).addClass('zoom-image-sm');
-            } else {
-
-                $(this).removeClass('zoom-image-lg').removeClass('zoom-image-sm');
-            }
-        } else {
-
-            if (!($(this).hasClass('zoom-image-lg') || $(this).hasClass('zoom-image-sm'))) {
-
-                screenshot.removeClass('zoom-image-lg').removeClass('zoom-image-sm');
-
-                $(this).addClass('zoom-image-lg');
-
-            } else {
-
-                $(this).removeClass('zoom-image-lg').removeClass('zoom-image-sm');
-            }
-        }
-
+        $(this).toggleClass('zoom-image');
 
     });
 </script>
