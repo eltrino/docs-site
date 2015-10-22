@@ -11,6 +11,7 @@ img {
 }
 
 img[src$="logo.png"] {
+    width: auto;
     max-width: 100%;
     cursor: auto;
     margin: 0;
