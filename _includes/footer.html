@@ -52,7 +52,7 @@
 
             if (!($(this).hasClass('zoom-image-lg') || $(this).hasClass('zoom-image-sm'))) {
 
-                screenshot.removeClass('zoom-image-lg', 'zoom-image-sm');
+                screenshot.removeClass('zoom-image-lg').removeClass('zoom-image-sm');
 
                 $(this).addClass('zoom-image-sm');
             } else {
@@ -63,9 +63,10 @@
 
             if (!($(this).hasClass('zoom-image-lg') || $(this).hasClass('zoom-image-sm'))) {
 
-                screenshot.removeClass('zoom-image-lg', 'zoom-image-sm');
+                screenshot.removeClass('zoom-image-lg').removeClass('zoom-image-sm');
 
                 $(this).addClass('zoom-image-lg');
+
             } else {
 
                 $(this).removeClass('zoom-image-lg').removeClass('zoom-image-sm');
