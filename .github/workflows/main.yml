@@ -22,5 +22,15 @@ jobs:
           node-version: 16
           cache: 'npm'
 
+      - name: Prepare
+        run: npm ci
+
       - name: Build
         run: bundle exec rake production buildfinal
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.BARABASHKA_TOKEN }}
+          external_repository: eltrino/diamantedesk-documentation
+          publish_dir: ./_site

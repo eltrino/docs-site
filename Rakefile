@@ -37,23 +37,6 @@ task :buildfinal do
   sh "jekyll build"
 end
 
-desc "Travis CI task..."
-task :travis do
-  Dir.chdir('_site'){
-    sh "git init"
-    sh "git config user.name 'Mr. Barabashka'"
-    sh "git config user.email 'barabashka@eltrino.com'"
-    sh "git add ."
-    sh "git commit -m 'Update documentation'"
-    sh 'git config credential.helper "store --file=.git/credentials"'
-    File.open('.git/credentials', 'w') do |f|
-      f.write("https://#{ENV['GH_TOKEN']}:@github.com")
-    end
-    sh "git remote add origin " + config['repository']
-    sh "git push origin master:gh-pages --force"
-  }
-end
-
 desc "Turn on production mode ..."
 task :production do
   file = YAML::load(File.open('_config.yml'))
