@@ -22,11 +22,5 @@ jobs:
           node-version: 16
           cache: 'npm'
 
-      - name: Prepare
-        run: |
-          - npm install -g bower
-          - bower install
-          - bundle install
-
       - name: Build
         run: bundle exec rake production buildfinal
