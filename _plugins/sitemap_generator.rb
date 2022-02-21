@@ -120,7 +120,7 @@ module Jekyll
     # Returns last_modified_date of latest post
     def fill_posts(site, urlset)
       last_modified_date = nil
-      site.posts.each do |post|
+      site.posts.docs.each do |post|
         if !excluded?(site, post.name)
           url = fill_url(site, post)
           urlset.add_element(url)
@@ -197,7 +197,7 @@ module Jekyll
     # Returns the location of the page or post
     def fill_location(site, page_or_post)
       loc = REXML::Element.new "loc"
-      url = site.config['url'] + site.config['baseurl']
+      url = site.config['url']
       loc.text = page_or_post.location_on_server(url)
 
       loc
